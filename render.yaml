@@ -1,0 +1,36 @@
+services:
+  # Player Service
+  - type: web
+    name: rpg-player-service
+    runtime: docker
+    rootDir: player-service
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: 8080
+
+  # Inventory Service
+  - type: web
+    name: rpg-inventory-service
+    runtime: docker
+    rootDir: inventory-service
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: 8080
+
+  # Combat Service
+  - type: web
+    name: rpg-combat-service
+    runtime: docker
+    rootDir: combat-service
+    plan: free
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: PORT
+        value: 8080
